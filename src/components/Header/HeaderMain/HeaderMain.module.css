@@ -1,0 +1,26 @@
+.main {
+	border-bottom: 1px solid #d9dce0;
+}
+
+.container {
+	max-width: 1406px;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.colLeft {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.logo {
+	margin-right: 23px;
+}
+
+.btn {
+}
+.search {
+}

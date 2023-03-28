@@ -1,0 +1,74 @@
+.btn {
+	background-color: #ffc85e;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 21px 0;
+	border-radius: 79px;
+	position: relative;
+}
+
+.catalog {
+	padding-left: 54px;
+	padding-right: 81px;
+}
+.catalog::after {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 0;
+	bottom: 0;
+	right: 54px;
+	margin: auto;
+	background: url('../../assets/images/catalog.svg') no-repeat;
+}
+
+.download {
+	padding-left: 43px;
+	padding-right: 73px;
+}
+.download::after {
+	content: '';
+	position: absolute;
+	width: 17px;
+	height: 17px;
+	top: 0;
+	bottom: 0;
+	right: 43px;
+	margin: auto;
+	background: url('../../assets/images/price-download.svg') no-repeat;
+}
+
+.cart {
+	padding-left: 39px;
+	padding-right: 75px;
+	font-size: 10px;
+}
+.cart::after {
+	content: '';
+	position: absolute;
+	width: 23px;
+	height: 23px;
+	top: 0;
+	bottom: 0;
+	right: 39px;
+	margin: auto;
+	background: url('../../assets/images/cart-white.svg') no-repeat;
+}
+
+.card {
+	padding: 16px 25px;
+	padding-right: 57px;
+}
+.card::after {
+	content: '';
+	position: absolute;
+	width: 27px;
+	height: 27px;
+	top: 0;
+	bottom: 0;
+	right: 25px;
+	margin: auto;
+	background: url('../../assets/images/cart-white.svg') no-repeat;
+}
