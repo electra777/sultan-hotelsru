@@ -3,9 +3,10 @@
 	color: #fff;
 	font-size: 14px;
 	font-weight: 700;
-	padding: 21px 0;
+	padding: 21px 60px;
 	border-radius: 79px;
 	position: relative;
+	display: block;
 }
 
 .catalog {
@@ -71,4 +72,20 @@
 	right: 25px;
 	margin: auto;
 	background: url('../../assets/images/cart-white.svg') no-repeat;
+}
+
+.pencil {
+	padding-left: 30px;
+	padding-right: 55px;
+}
+.pencil::after {
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: 0;
+	bottom: 0;
+	right: 29px;
+	margin: auto;
+	background: url('../../assets/images/pencil.svg') no-repeat;
 }

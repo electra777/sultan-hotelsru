@@ -1,0 +1,48 @@
+.inputWrapper {
+	height: 100%;
+	position: relative;
+}
+
+.input {
+	background-color: #ededed;
+	padding: 21px 20px;
+	border-radius: 36px;
+	border: none;
+	height: 100%;
+}
+.input:placeholder {
+	color: #5c6370;
+	font-size: 12px;
+}
+.input:focus {
+	box-shadow: inset 0 0 7px 3px #888;
+	outline: none;
+}
+
+.inputWrapper.search::after {
+	content: '';
+	position: absolute;
+	width: 39px;
+	height: 39px;
+	top: 0;
+	bottom: 0;
+	right: 10px;
+	margin: auto;
+	background: url('../../assets/images/search.svg') no-repeat;
+}
+
+.inputWrapper.email .input {
+	background-color: #fff;
+	color: #000;
+}
+.inputWrapper.email::after {
+	content: '';
+	position: absolute;
+	width: 39px;
+	height: 39px;
+	top: 0;
+	bottom: 0;
+	right: 10px;
+	margin: auto;
+	background: url('../../assets/images/corner.svg') no-repeat;
+}

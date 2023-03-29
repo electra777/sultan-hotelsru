@@ -11,6 +11,7 @@ const Button = ({ children, icon }: ButtonProps): JSX.Element => {
 				[styles.download]: icon === 'download',
 				[styles.cart]: icon === 'cart',
 				[styles.card]: icon === 'card',
+				[styles.pencil]: icon === 'pencil',
 			})}>
 			{children}
 		</a>
