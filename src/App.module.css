@@ -1,3 +1,8 @@
 .app {
-	text-align: center;
+}
+
+.container {
+	max-width: 1406px;
+	margin: 0 auto;
+	padding: 0 20px;
 }

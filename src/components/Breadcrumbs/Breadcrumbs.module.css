@@ -1,0 +1,25 @@
+.breadcrumbs {
+	margin: 50px 0;
+}
+
+.list {
+	display: flex;
+}
+
+.item {
+	padding: 0 10px;
+}
+
+.item:not(:last-of-type) {
+	border-right: 1px dashed #ecedf0;
+}
+
+.link {
+	color: #3f4e65;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.link.isActive {
+	opacity: 0.5;
+}
