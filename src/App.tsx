@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import Footer from './components/Footer/Footer';
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import ProductCard from './components/ProductCard/ProductCard';
+import Product from './components/Product/Product';
 
 function App(): JSX.Element {
 	return (
@@ -12,6 +13,7 @@ function App(): JSX.Element {
 				<Breadcrumbs />
 
 				<ProductCard />
+				<Product />
 			</div>
 			<Footer />
 		</div>

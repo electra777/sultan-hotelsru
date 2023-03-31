@@ -1,0 +1,121 @@
+.product {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 40px;
+	padding: 50px 0;
+}
+
+.imgWrapper {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.img {
+	width: 100%;
+}
+
+.inStock {
+	color: #1fd85d;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.title {
+	color: #111111;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 45px;
+	margin-bottom: 10px;
+}
+
+.iconWrapper {
+	display: flex;
+	gap: 7px;
+	margin-bottom: 15px;
+}
+
+.size {
+	color: #3f4e65;
+	font-size: 12px;
+}
+.sizeValue {
+	margin-left: 4px;
+}
+
+.priceWrapper {
+	display: flex;
+	gap: 40px;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.price {
+	color: #111111;
+	font-size: 30px;
+	font-weight: 800;
+}
+
+.currency {
+	margin-left: 5px;
+}
+
+.quantityWrapper {
+}
+.minus,
+.plus {
+	background-color: #ffefd1;
+	padding: 4px 13px;
+	border-radius: 1000px;
+	color: #3f4e65;
+	font-size: 12px;
+	font-weight: 300;
+}
+.quantity {
+	color: #3f4e65;
+	font-size: 14px;
+	font-weight: 500;
+	margin: 0 20px;
+}
+
+.featureShort {
+	margin-bottom: 30px;
+}
+
+.destination,
+.type,
+.manufacturer,
+.brand,
+.vendorCode,
+.barcode,
+.weight,
+.volume,
+.countInBox {
+	color: #3f4e65;
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+.value {
+	color: #111111;
+	font-weight: 500;
+	margin-left: 5px;
+}
+
+.descriptionWrapper {
+	margin-bottom: 20px;
+}
+
+.descriptionTitle,
+.featureTitle {
+	color: #111111;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.description {
+	color: #3f4e65;
+	font-size: 12px;
+	font-weight: 300;
+}
