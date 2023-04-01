@@ -69,12 +69,58 @@
 	color: #3f4e65;
 	font-size: 12px;
 	font-weight: 300;
+	cursor: pointer;
 }
 .quantity {
 	color: #3f4e65;
 	font-size: 14px;
 	font-weight: 500;
 	margin: 0 20px;
+}
+
+.info {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 35px;
+}
+.share {
+	padding: 25px 29px;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.delivery {
+	color: #3f4e65;
+	font-size: 12px;
+	max-width: 316px;
+	padding: 20px 35px;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
+	border-radius: 10px;
+}
+.priceList {
+	color: #3f4e65;
+	font-size: 14px;
+	font-weight: 700;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 30px 65px 30px 37px;
+	position: relative;
+}
+.priceList::after {
+	content: '';
+	position: absolute;
+	right: 37px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 17px;
+	height: 17px;
+	background: url('../../assets/images/download-black.svg') no-repeat;
 }
 
 .featureShort {
