@@ -5,6 +5,7 @@ import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs';
 import ProductCard from './components/ProductCard/ProductCard';
 import Product from './components/Product/Product';
 import FormCheckout from './components/FormCheckout/FormCheckout';
+import Cart from './components/Cart/Cart';
 
 function App(): JSX.Element {
 	return (
@@ -17,6 +18,7 @@ function App(): JSX.Element {
 				<Product />
 
 				<FormCheckout />
+				<Cart />
 			</div>
 			<Footer />
 		</div>
