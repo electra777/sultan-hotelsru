@@ -80,6 +80,7 @@
 .pencil {
 	padding-left: 30px;
 	padding-right: 55px;
+	display: inline-block;
 }
 .pencil::after {
 	content: '';
