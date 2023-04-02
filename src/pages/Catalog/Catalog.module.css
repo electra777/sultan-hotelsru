@@ -1,3 +1,23 @@
+.topMenu {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.topItem {
+	color: #3f4e65;
+	line-height: 17px;
+	padding: 18px 15px;
+	box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
 .catalog {
 	display: grid;
 	grid-template-columns: 238px 1fr;
@@ -49,7 +69,6 @@
 }
 
 .manufacturerWrapper {
-	padding-bottom: 20px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid #c5cad1;
 }
@@ -60,11 +79,54 @@
 	margin-bottom: 15px;
 }
 
-.filterItem {
+.checkboxesWrapper {
+	margin: 15px 0;
+}
+
+.checkboxesGroup {
+	margin-bottom: 5px;
+}
+
+.label {
+	color: #3f4e65;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+.showAll {
+	color: #3f4e65;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1;
+	margin-top: 15px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+.showAll::after {
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	left: 85px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: url('../../assets/images/select-arrow.svg') no-repeat;
+}
+
+.filterTitle {
 	color: #111111;
 	font-size: 16px;
 	font-weight: 500;
+	margin-bottom: 15px;
 	text-transform: uppercase;
+}
+.filterItem {
+	color: #3f4e65;
+	font-size: 14px;
+	margin-bottom: 10px;
+	cursor: pointer;
 }
 
 .content {
