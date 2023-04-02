@@ -1,0 +1,74 @@
+.catalog {
+	display: grid;
+	grid-template-columns: 238px 1fr;
+	gap: 108px;
+}
+
+.aside {
+}
+
+.asideTitle {
+	color: #111111;
+	font-size: 16px;
+	font-weight: 500;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.priceTitle {
+	color: #3f4e65;
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 15px;
+}
+.currency {
+	color: #111111;
+	font-size: 14px;
+	font-weight: 500;
+	margin-left: 5px;
+}
+.priceGroup {
+}
+.priceInput {
+	color: #3f4e65;
+	background-color: #ffeecc;
+	border: none;
+	border-radius: 1000px;
+	font-size: 12px;
+	font-weight: 300;
+	text-align: center;
+	width: 100px;
+	height: 23px;
+	margin-bottom: 30px;
+}
+.priceInput:focus {
+	outline: none;
+	box-shadow: 0 0 3px 1px #3f4e65;
+}
+.priceLine {
+	margin: 0 10px;
+}
+
+.manufacturerWrapper {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #c5cad1;
+}
+.manufacturerTitle {
+	color: #111111;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.filterItem {
+	color: #111111;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+	gap: 21px;
+}

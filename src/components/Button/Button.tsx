@@ -4,8 +4,7 @@ import { ButtonProps } from './Button.props';
 
 const Button = ({ children, icon }: ButtonProps): JSX.Element => {
 	return (
-		<a
-			href="#"
+		<button
 			className={cn(styles.btn, {
 				[styles.catalog]: icon === 'catalog',
 				[styles.download]: icon === 'download',
@@ -14,7 +13,7 @@ const Button = ({ children, icon }: ButtonProps): JSX.Element => {
 				[styles.pencil]: icon === 'pencil',
 			})}>
 			{children}
-		</a>
+		</button>
 	);
 };
 
