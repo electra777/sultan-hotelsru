@@ -20,7 +20,6 @@ function App(): JSX.Element {
 					<Route path={`/catalog/:barcode`} element={<Product />} />
 					<Route path={`/checkout`} element={<FormCheckout />} />
 				</Routes>
-				<Breadcrumbs />
 			</div>
 			<Footer />
 		</div>

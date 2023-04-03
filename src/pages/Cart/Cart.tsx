@@ -2,8 +2,9 @@ import styles from './Cart.module.css';
 import Button from '../../components/Button/Button';
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { useState } from 'react';
 import { addItem, minusItem, removeItem } from '../../redux/slices/cartSlice';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Htag from '../../components/Htag/Htag';
 
 const Cart = () => {
 	const { items, totalPrice } = useAppSelector((state) => state.cart);
@@ -28,6 +29,8 @@ const Cart = () => {
 
 	return (
 		<div className={styles.cart}>
+			<Breadcrumbs></Breadcrumbs>
+			<Htag>Корзина</Htag>
 			<ul className={styles.list}>
 				{items.map((item) => {
 					return (

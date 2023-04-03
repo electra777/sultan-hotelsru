@@ -6,6 +6,8 @@ import { fetchData, productsCardSelector } from '../../redux/slices/productsSlic
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import Htag from '../../components/Htag/Htag';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const Catalog = () => {
 	const { data, loading } = useAppSelector(productsCardSelector);
@@ -22,6 +24,11 @@ const Catalog = () => {
 
 	return (
 		<div className={styles.catalogWrapper}>
+			<Breadcrumbs></Breadcrumbs>
+			<div className={styles.top}>
+				<Htag>Косметика и гигиена</Htag>
+				<div className={styles.sortingWrapper}></div>
+			</div>
 			<div className={styles.topMenu}>
 				<div className={styles.topItem}>Уход за телом</div>
 				<div className={styles.topItem}>Уход за руками</div>
