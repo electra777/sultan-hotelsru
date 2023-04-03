@@ -33,9 +33,11 @@ const Cart = () => {
 					return (
 						<li className={styles.item} key={item.barcode}>
 							<div className={styles.colLeft}>
-								<div className={styles.imgWrapper}>
-									<img src={item.image.url} alt={item.image.alt} />
-								</div>
+								<Link to={`/catalog/${item.barcode}`}>
+									<div className={styles.imgWrapper}>
+										<img src={item.image.url} alt={item.image.alt} />
+									</div>
+								</Link>
 								<div className={styles.productsDescription}>
 									<div className={styles.iconWrapper}>
 										{item.volume ? (
@@ -85,7 +87,9 @@ const Cart = () => {
 											<span className={styles.productsSizeValue}>{item.volume ? ' мл' : ' г'}</span>
 										</div>
 									</div>
-									<div className={styles.productsTitle}>{item.name}</div>
+									<Link to={`/catalog/${item.barcode}`}>
+										<div className={styles.productsTitle}>{item.name}</div>
+									</Link>
 									<div className={styles.productsText}>{item.description}</div>
 								</div>
 							</div>
@@ -114,7 +118,8 @@ const Cart = () => {
 					<Button>Оформить заказ</Button>
 				</Link>
 				<div className={styles.totalSum}>
-					1 348,76 <span className={styles.currency}>₸</span>
+					{totalPrice.toFixed(2)}
+					<span className={styles.currency}>₸</span>
 				</div>
 			</div>
 		</div>

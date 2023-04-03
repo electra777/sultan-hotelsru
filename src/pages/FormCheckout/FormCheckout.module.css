@@ -184,8 +184,11 @@
 }
 
 .productsItem {
-	display: flex;
+	display: grid;
+	grid-template-columns: 175px 1fr;
+	gap: 10px;
 	padding: 20px;
+	padding-right: 5px;
 	border-bottom: 1px dashed #c5cad1;
 }
 
@@ -213,6 +216,7 @@
 	color: #111111;
 	font-size: 20px;
 	font-weight: 500;
+	line-height: 24px;
 	margin-bottom: 15px;
 }
 
