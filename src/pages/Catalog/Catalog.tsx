@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { fetchData, productsCardSelector } from '../../redux/slices/productsSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const Catalog = () => {
 	const { data, loading } = useAppSelector(productsCardSelector);
@@ -16,11 +17,7 @@ const Catalog = () => {
 	}, [dispatch]);
 
 	const productCards = data.map((item) => {
-		return (
-			<Link to={`/catalog/${item.barcode}`} key={item.barcode}>
-				<ProductCard {...item} />
-			</Link>
-		);
+		return <ProductCard {...item} key={item.barcode} />;
 	});
 
 	return (
@@ -87,6 +84,10 @@ const Catalog = () => {
 							<div className={styles.showAll}>
 								Показать все <span className={styles.arrow}></span>
 							</div>
+						</div>
+						<div className={styles.btnsGroup}>
+							<Button>Показать</Button>
+							<Button icon="trash"></Button>
 						</div>
 					</div>
 					<div className={styles.filter}>

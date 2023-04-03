@@ -1,6 +1,9 @@
 import styles from './ProductCard.module.css';
 import Button from '../Button/Button';
 import { ProductCardProps } from './ProductCard.props';
+import { Link } from 'react-router-dom';
+import { addItem } from '../../redux/slices/cartSlice';
+import { useAppDispatch } from '../../hooks/hooks';
 
 const ProductCard = ({
 	image,
@@ -12,12 +15,31 @@ const ProductCard = ({
 	manufacturer,
 	brand,
 	price,
+	description,
 }: ProductCardProps) => {
+	const dispatch = useAppDispatch();
+	const onClickAdd = () => {
+		const item = {
+			barcode,
+			name,
+			price,
+			image,
+			count,
+			weight,
+			volume,
+			description,
+		};
+		dispatch(addItem(item));
+	};
+
 	return (
 		<div className={styles.productCard}>
-			<div className={styles.imgWrapper}>
-				<img src={image.url} alt={image.alt} className={styles.img} />
-			</div>
+			<Link to={`/catalog/${barcode}`}>
+				<div className={styles.imgWrapper}>
+					<img src={image.url} alt={image.alt} className={styles.img} />
+				</div>
+			</Link>
+
 			<div className={styles.iconWrapper}>
 				{volume ? (
 					<svg
@@ -65,7 +87,10 @@ const ProductCard = ({
 					<span className={styles.sizeValue}>{weight ? 'г' : 'мл'}</span>
 				</div>
 			</div>
-			<div className={styles.title}>{name}</div>
+
+			<Link to={`/catalog/${barcode}`}>
+				<div className={styles.title}>{name}</div>
+			</Link>
 
 			<div className={styles.barcode}>
 				Штрихкод:
@@ -85,7 +110,9 @@ const ProductCard = ({
 					{price}
 					<span className={styles.currency}>₸</span>
 				</div>
-				<Button icon="card">В КОРЗИНУ</Button>
+				<Button icon="card" handleClick={onClickAdd}>
+					В КОРЗИНУ
+				</Button>
 			</div>
 		</div>
 	);

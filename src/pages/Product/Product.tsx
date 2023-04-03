@@ -2,6 +2,8 @@ import styles from './Product.module.css';
 import Button from '../../components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/hooks';
+import { addItem } from '../../redux/slices/cartSlice';
 
 const Product = () => {
 	const initialState = {
@@ -46,8 +48,31 @@ const Product = () => {
 			});
 	}, []);
 
-	console.log(data.name);
-	console.log(typeof data.inStock);
+	const [count, setCount] = useState(1);
+
+	const handleClickPlus = () => {
+		setCount(count + 1);
+	};
+	const handleClickMinus = () => {
+		if (count > 1) {
+			setCount(count - 1);
+		}
+	};
+
+	const dispatch = useAppDispatch();
+	const onClickAdd = () => {
+		const item = {
+			barcode: data.barcode,
+			name: data.name,
+			price: data.price,
+			image: data.image,
+			description: data.description,
+			weight: data.weight,
+			volume: data.volume,
+			count,
+		};
+		dispatch(addItem(item));
+	};
 
 	return (
 		<div className={styles.product}>
@@ -117,11 +142,17 @@ const Product = () => {
 						<span className={styles.currency}>₸</span>
 					</div>
 					<div className={styles.quantityWrapper}>
-						<span className={styles.minus}>-</span>
-						<span className={styles.quantity}>1</span>
-						<span className={styles.plus}>+</span>
+						<button className={styles.minus} onClick={handleClickMinus}>
+							-
+						</button>
+						<span className={styles.quantity}>{count}</span>
+						<button className={styles.plus} onClick={handleClickPlus}>
+							+
+						</button>
 					</div>
-					<Button icon="cart">В корзину</Button>
+					<Button icon="cart" handleClick={onClickAdd}>
+						В корзину
+					</Button>
 				</div>
 
 				<div className={styles.info}>

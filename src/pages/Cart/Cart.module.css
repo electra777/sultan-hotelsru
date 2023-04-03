@@ -22,14 +22,13 @@
 
 .imgWrapper {
 	text-align: center;
-	max-width: 281px;
-	width: 100%;
+	width: 281px;
 	max-height: 191px;
 	height: 100%;
 }
 
 .productsDescription {
-	max-width: 620px;
+	max-width: 585px;
 }
 
 .iconWrapper {
@@ -48,6 +47,7 @@
 	color: #111111;
 	font-size: 30px;
 	font-weight: 700;
+	line-height: 36px;
 	margin-bottom: 10px;
 }
 .currency {
@@ -90,6 +90,7 @@
 	background-color: #ffefd1;
 	padding: 4px 13px;
 	border-radius: 1000px;
+	border: none;
 	color: #3f4e65;
 	font-size: 12px;
 	font-weight: 300;
@@ -100,13 +101,4 @@
 	font-size: 14px;
 	font-weight: 500;
 	margin: 0 20px;
-}
-
-.btn {
-	width: 59px;
-	height: 59px;
-	border: none;
-	border-radius: 50%;
-	background: url('../../assets/images/trash.svg') no-repeat center center;
-	background-color: #ffc85e;
 }

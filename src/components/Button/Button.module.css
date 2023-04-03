@@ -3,7 +3,7 @@
 	color: #fff;
 	font-size: 14px;
 	font-weight: 700;
-	padding: 18px 60px;
+	padding: 18px 51px;
 	border-radius: 79px;
 	position: relative;
 	display: block;
@@ -93,4 +93,14 @@
 	right: 29px;
 	margin: auto;
 	background: url('../../assets/images/pencil.svg') no-repeat;
+}
+
+.trash {
+	width: 59px;
+	height: 59px;
+	border: none;
+	border-radius: 50%;
+	background: url('../../assets/images/trash.svg') no-repeat center center;
+	background-color: #ffc85e;
+	padding: 20px;
 }

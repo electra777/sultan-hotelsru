@@ -99,6 +99,7 @@
 	font-weight: 500;
 	line-height: 1;
 	margin-top: 15px;
+	margin-bottom: 25px;
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
@@ -113,6 +114,12 @@
 	bottom: 0;
 	margin: auto;
 	background: url('../../assets/images/select-arrow.svg') no-repeat;
+}
+
+.btnsGroup {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 40px;
 }
 
 .filterTitle {

@@ -8,6 +8,7 @@ export interface ProductCard {
 	manufacturer: string;
 	brand: string;
 	price: number;
+	description: string;
 }
 
 export interface ProductCardModel {

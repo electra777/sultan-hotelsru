@@ -81,6 +81,7 @@
 	font-size: 12px;
 	font-weight: 300;
 	cursor: pointer;
+	border: none;
 }
 .quantity {
 	color: #3f4e65;

@@ -3,8 +3,10 @@ import Input from '../../Input/Input';
 import callUs from '../../../assets/images/call-us.png';
 import styles from './HeaderMain.module.css';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../../hooks/hooks';
 
 const HeaderMain = () => {
+	const { items, totalPrice } = useAppSelector((state) => state.cart);
 	return (
 		<div className={styles.main}>
 			<div className={styles.container}>
@@ -101,12 +103,12 @@ const HeaderMain = () => {
 									/>
 								</svg>
 
-								<span className={styles.counter}>3</span>
+								<span className={styles.counter}>{items.length}</span>
 							</div>
 							<div className={styles.priceWrapper}>
 								<div className={styles.cartTitle}>Корзина</div>
 								<div className={styles.price}>
-									12 478
+									{totalPrice.toFixed(2)}
 									<span className={styles.priceСurrency}>₸</span>
 								</div>
 							</div>
