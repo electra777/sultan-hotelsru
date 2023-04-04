@@ -4,10 +4,11 @@ export interface ProductProps {
 	weight?: string;
 	volume?: string;
 	size?: string;
-	count: string;
+	things?: string;
 	barcode: string;
 	manufacturer: string;
 	brand: string;
 	description: string;
 	price: string;
+	inCart: boolean;
 }

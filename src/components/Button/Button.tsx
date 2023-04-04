@@ -2,10 +2,10 @@ import cn from 'classnames';
 import styles from './Button.module.css';
 import { ButtonProps } from './Button.props';
 
-const Button = ({ children, icon, handleClick }: ButtonProps): JSX.Element => {
+const Button = ({ children, icon, handleClick, className }: ButtonProps): JSX.Element => {
 	return (
 		<button
-			className={cn(styles.btn, {
+			className={cn(styles.btn, className, {
 				[styles.catalog]: icon === 'catalog',
 				[styles.download]: icon === 'download',
 				[styles.cart]: icon === 'cart',

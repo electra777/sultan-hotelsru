@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/hooks';
 import { addItem } from '../../redux/slices/cartSlice';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import cn from 'classnames';
 
 const Product = () => {
 	const initialState = {
@@ -13,13 +14,15 @@ const Product = () => {
 		weight: 0,
 		volume: 0,
 		size: 0,
-		count: 0,
+		things: 0,
 		barcode: '',
 		manufacturer: '',
 		brand: '',
 		description: '',
 		price: 0,
+		count: 1,
 		inStock: false,
+		inCart: false,
 	};
 
 	interface IProduct {
@@ -28,13 +31,15 @@ const Product = () => {
 		weight?: number;
 		volume?: number;
 		size?: number;
-		count?: number;
+		things?: number;
 		barcode: string;
 		manufacturer: string;
 		brand: string;
 		description: string;
 		price: number;
+		count: number;
 		inStock: boolean;
+		inCart: boolean;
 	}
 
 	let location = useLocation();
@@ -61,6 +66,7 @@ const Product = () => {
 	};
 
 	const dispatch = useAppDispatch();
+
 	const onClickAdd = () => {
 		const item = {
 			barcode: data.barcode,
@@ -70,8 +76,13 @@ const Product = () => {
 			description: data.description,
 			weight: data.weight,
 			volume: data.volume,
+			things: data.things,
 			count,
+			inCart: true,
 		};
+
+		console.log(count, 'count');
+
 		dispatch(addItem(item));
 	};
 
@@ -134,7 +145,7 @@ const Product = () => {
 							</svg>
 						)}
 						<div className={styles.size}>
-							{data.count ? `${data.count} X` : ''} {data.weight} {data.volume}
+							{data.things ? `${data.things} X` : ''} {data.weight} {data.volume}
 							<span className={styles.sizeValue}>{data.weight ? 'г' : 'мл'}</span>
 						</div>
 					</div>
@@ -252,7 +263,7 @@ const Product = () => {
 							</div>
 							<div className={styles.countInBox}>
 								Кол-во в коробке:
-								{data.count ? <span className={styles.value}>{data.count}</span> : ' -'}
+								{data.things ? <span className={styles.value}>{data.things}</span> : ' -'}
 							</div>
 						</div>
 					</div>

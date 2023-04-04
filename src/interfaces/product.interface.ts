@@ -3,12 +3,13 @@ export interface ProductCard {
 	name: string;
 	weight?: number;
 	volume?: number;
-	count?: number;
+	things?: number;
 	barcode: string;
 	manufacturer: string;
 	brand: string;
 	price: number;
 	description: string;
+	inCart: boolean;
 }
 
 export interface ProductCardModel {

@@ -10,7 +10,7 @@ const ProductCard = ({
 	name,
 	weight,
 	volume,
-	count,
+	things,
 	barcode,
 	manufacturer,
 	brand,
@@ -24,7 +24,7 @@ const ProductCard = ({
 			name,
 			price,
 			image,
-			count,
+			things,
 			weight,
 			volume,
 			description,
@@ -83,7 +83,7 @@ const ProductCard = ({
 					</svg>
 				)}
 				<div className={styles.size}>
-					{count ? `${count} X` : ''} {weight} {volume}
+					{things ? `${things} X` : ''} {weight} {volume}
 					<span className={styles.sizeValue}>{weight ? 'г' : 'мл'}</span>
 				</div>
 			</div>

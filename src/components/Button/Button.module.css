@@ -59,6 +59,9 @@
 	margin: auto;
 	background: url('../../assets/images/cart-white.svg') no-repeat;
 }
+.inCart {
+	background-color: #949494;
+}
 
 .card {
 	padding: 15px 30px;
