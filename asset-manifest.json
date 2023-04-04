@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/sultan-hotelsru/static/css/main.0a8a1508.css",
+    "main.js": "/sultan-hotelsru/static/js/main.0fbb77dd.js",
+    "static/js/787.116fce21.chunk.js": "/sultan-hotelsru/static/js/787.116fce21.chunk.js",
+    "static/media/cart-white.svg": "/sultan-hotelsru/static/media/cart-white.c45dfb7addcbe577495f.svg",
+    "static/media/icon-cash.svg": "/sultan-hotelsru/static/media/icon-cash.319b3d11ad5cb40d0628.svg",
+    "static/media/trash.svg": "/sultan-hotelsru/static/media/trash.279d5995ae3018ec165b.svg",
+    "static/media/icon-delivery.svg": "/sultan-hotelsru/static/media/icon-delivery.7ef75629d78d70aea7ee.svg",
+    "static/media/cross.svg": "/sultan-hotelsru/static/media/cross.ae741285e8b47fe4d9dd.svg",
+    "static/media/header-envelope.svg": "/sultan-hotelsru/static/media/header-envelope.0e60b649d701ef93c4ab.svg",
+    "index.html": "/sultan-hotelsru/index.html",
+    "static/media/pencil.svg": "/sultan-hotelsru/static/media/pencil.196953f412e9aa21838c.svg",
+    "static/media/header-point-map.svg": "/sultan-hotelsru/static/media/header-point-map.755a2756fabb2930d91e.svg",
+    "static/media/catalog.svg": "/sultan-hotelsru/static/media/catalog.b6f03f0833e38dd92293.svg",
+    "static/media/search.svg": "/sultan-hotelsru/static/media/search.59786f46599735f3b500.svg",
+    "static/media/download-black.svg": "/sultan-hotelsru/static/media/download-black.16630390ef6939acf35b.svg",
+    "static/media/price-download.svg": "/sultan-hotelsru/static/media/price-download.5bd80f7c253a74a2b166.svg",
+    "static/media/corner.svg": "/sultan-hotelsru/static/media/corner.0d986679d5813054ae88.svg",
+    "static/media/select-arrow.svg": "/sultan-hotelsru/static/media/select-arrow.8425e6d9d89d5ed0daae.svg",
+    "main.0a8a1508.css.map": "/sultan-hotelsru/static/css/main.0a8a1508.css.map",
+    "main.0fbb77dd.js.map": "/sultan-hotelsru/static/js/main.0fbb77dd.js.map",
+    "787.116fce21.chunk.js.map": "/sultan-hotelsru/static/js/787.116fce21.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a8a1508.css",
+    "static/js/main.0fbb77dd.js"
+  ]
+}
