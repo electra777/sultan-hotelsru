@@ -13,9 +13,17 @@ const FormCheckout = () => {
 
 	const [activePopup, setActivePopup] = useState(false);
 
+	const body: any = document.querySelector('body');
+
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		setActivePopup(true);
+		body.style = 'overflow: hidden';
+	};
+
+	const handleClosePopup = () => {
+		setActivePopup(false);
+		body.style = 'overflow: initial';
 	};
 
 	return (
@@ -23,13 +31,14 @@ const FormCheckout = () => {
 			<Breadcrumbs></Breadcrumbs>
 			<Htag>Оформление заказа</Htag>
 
-			<form className={styles.checkout} onSubmit={handleSubmit}>
-				<div
-					className={cn(styles.popupWrapper, {
-						[styles.isActive]: activePopup === true,
-					})}>
-					<div className={styles.popup}>
-						<div className={styles.iconWrapper}>
+			<div
+				className={cn(styles.popupWrapper, {
+					[styles.isActive]: activePopup === true,
+				})}>
+				<div className={styles.popup}>
+					<button className={styles.btn} onClick={handleClosePopup}></button>
+					<div className={styles.content}>
+						<div className={styles.popupIconWrapper}>
 							<svg
 								width="59"
 								height="59"
@@ -65,7 +74,9 @@ const FormCheckout = () => {
 						<div className={styles.text}>Наш менеджер свяжется с вами в ближайшее время</div>
 					</div>
 				</div>
+			</div>
 
+			<form className={styles.checkout} onSubmit={handleSubmit}>
 				<div className={styles.colLeft}>
 					<div className={styles.col}>
 						<div className={styles.titleWrapper}>
