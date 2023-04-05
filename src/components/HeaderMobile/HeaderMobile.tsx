@@ -12,7 +12,7 @@ const HeaderMobile = () => {
 
 	const setActiveMenu = () => {
 		setIsActiveMenu(!isActiveMenu);
-		if (isActiveMenu === true) {
+		if (!isActiveMenu) {
 			body.style = 'overflow: hidden';
 		} else {
 			body.style = 'overflow: initial';
