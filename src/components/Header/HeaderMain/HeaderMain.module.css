@@ -20,7 +20,7 @@
 .logo {
 	margin-right: 23px;
 	max-width: 156px;
-	width: 100%;
+	width: 156px;
 }
 
 .colRight {
@@ -133,6 +133,12 @@
 		align-items: initial;
 	}
 	.colRight {
-		justify-content: flex-end;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 725px) {
+	.main {
+		display: none;
 	}
 }

@@ -12,6 +12,7 @@ const Button = ({ children, icon, handleClick, className }: ButtonProps): JSX.El
 				[styles.card]: icon === 'card',
 				[styles.pencil]: icon === 'pencil',
 				[styles.trash]: icon === 'trash',
+				[styles.menu]: icon === 'menu',
 			})}
 			onClick={handleClick}>
 			{children}
