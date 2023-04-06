@@ -1,20 +1,115 @@
-import Button from '../../Button/Button';
-import Input from '../../Input/Input';
-import callUs from '../../../assets/images/call-us.png';
-import styles from './HeaderMain.module.css';
+import cn from 'classnames';
+import Button from '../Button/Button';
+import styles from './HeaderMobile.module.css';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../../hooks/hooks';
+import { useAppSelector } from '../../hooks/hooks';
 
-const HeaderMain = () => {
+const HeaderMobile = () => {
+	const [isActiveMenu, setIsActiveMenu] = useState(false);
+
+	const body: any = document.querySelector('body');
+
+	const setActiveMenu = () => {
+		setIsActiveMenu(!isActiveMenu);
+		if (isActiveMenu === true) {
+			body.style = 'overflow: hidden';
+		} else {
+			body.style = 'overflow: initial';
+		}
+	};
+
 	const { items, totalPrice } = useAppSelector((state) => state.cart);
+
 	return (
-		<div className={styles.main}>
-			<div className={styles.container}>
-				<div className={styles.colLeft}>
+		<header className={styles.headerMobile}>
+			<div className={styles.headerTop}>
+				<div className={styles.container}>
+					<Button
+						icon="menu"
+						className={cn(styles.burgerBtn, { [styles.isActive]: isActiveMenu === true })}
+						handleClick={setActiveMenu}>
+						<span className={styles.burger}></span>
+					</Button>
+					<div className={styles.openMenu}>
+						<div className={styles.contacts}>
+							<div className={styles.item}>
+								<div className={styles.title}>г.Кокчетав, ул. Ж. Ташенова 129Б</div>
+								<div className={styles.text}>(Рынок Восточный)</div>
+							</div>
+							<div className={styles.item}>
+								<a href="mailto:opt.sultan@mail.ru" className={styles.title}>
+									opt.sultan@mail.ru
+								</a>
+								<div className={styles.text}>На связи в любое время</div>
+							</div>
+							<div className={styles.item}>
+								<div className={styles.title}>Отдел продаж</div>
+								<a href="tel:+77774900091" className={styles.text}>
+									+7 (777) 490-00-91
+								</a>
+							</div>
+							<div className={styles.item}>
+								<div className={styles.text}>время работы: 9:00-20:00</div>
+							</div>
+
+							<a href="#" className={styles.callback}>
+								<svg
+									width="30"
+									height="30"
+									viewBox="0 0 30 30"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									className={styles.callbackIcon}>
+									<rect width="30" height="30" rx="15" fill="#FFC85E" />
+									<g clip-path="url(#clip0_144_5050)">
+										<path
+											d="M16.3531 16.7125L17.0531 16.0125C17.1474 15.9194 17.2667 15.8557 17.3965 15.829C17.5263 15.8024 17.6611 15.814 17.7844 15.8625L18.6375 16.2031C18.7621 16.2537 18.869 16.3401 18.9446 16.4513C19.0203 16.5625 19.0613 16.6936 19.0625 16.8281V18.3906C19.0618 18.4821 19.0426 18.5725 19.006 18.6564C18.9694 18.7403 18.9162 18.8159 18.8496 18.8786C18.7831 18.9414 18.7045 18.9901 18.6186 19.0217C18.5328 19.0533 18.4414 19.0672 18.35 19.0625C12.3719 18.6906 11.1656 13.6281 10.9375 11.6906C10.9269 11.5955 10.9366 11.4992 10.9659 11.408C10.9952 11.3169 11.0435 11.233 11.1075 11.1619C11.1716 11.0907 11.25 11.034 11.3376 10.9953C11.4251 10.9566 11.5199 10.9369 11.6156 10.9375H13.125C13.2597 10.9379 13.3912 10.9786 13.5026 11.0543C13.614 11.1301 13.7001 11.2374 13.75 11.3625L14.0906 12.2156C14.1407 12.3385 14.1535 12.4733 14.1274 12.6034C14.1012 12.7334 14.0374 12.8529 13.9438 12.9469L13.2438 13.6469C13.2438 13.6469 13.6469 16.375 16.3531 16.7125Z"
+											fill="white"
+										/>
+									</g>
+									<defs>
+										<clipPath id="clip0_144_5050">
+											<rect width="10" height="10" fill="white" transform="translate(10 10)" />
+										</clipPath>
+									</defs>
+								</svg>
+								Заказать звонок
+							</a>
+						</div>
+
+						<div className={styles.menu}>
+							<div className={styles.menuTitle}>Меню сайта:</div>
+							<ul className={styles.nav}>
+								<li className={styles.navItem}>
+									<a href="#" className={styles.navItemLink}>
+										О компании
+									</a>
+								</li>
+								<li className={styles.navItem}>
+									<a href="#" className={styles.navItemLink}>
+										Доставка и оплата
+									</a>
+								</li>
+								<li className={styles.navItem}>
+									<a href="#" className={styles.navItemLink}>
+										Возврат
+									</a>
+								</li>
+								<li className={styles.navItem}>
+									<a href="#" className={styles.navItemLink}>
+										Контакты
+									</a>
+								</li>
+							</ul>
+						</div>
+						<Button icon="download">Прайс-лист</Button>
+					</div>
+
 					<Link to="/">
 						<svg
-							width="156"
-							height="66"
+							width="97"
+							height="41"
 							viewBox="0 0 156 66"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -65,60 +160,79 @@ const HeaderMain = () => {
 						</svg>
 					</Link>
 
-					<Link to="/catalog">
-						<Button icon="catalog">Каталог</Button>
-					</Link>
-					<Input variant="search" placeholder="Поиск..." />
-				</div>
-				<div className={styles.colRight}>
-					<div className={styles.item}>
-						<div className={styles.itemCol}>
-							<a href="tel:+77774900091" className={styles.phone}>
-								+7 (777) 490-00-91
-							</a>
-							<div className={styles.workTime}>время работы: 9:00-20:00</div>
-							<a href="#" className={styles.callback}>
-								Заказать звонок
-							</a>
-						</div>
-						<div className={styles.itemCol}>
-							<img src={callUs} alt="call-us" />
-						</div>
-					</div>
-
-					<Button icon="download">Прайс-лист</Button>
-
 					<Link to="/cart">
-						<div className={styles.cartWrapper}>
-							<div className={styles.iconWrapper}>
-								<svg
-									width="41"
-									height="29"
-									viewBox="0 0 41 29"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									className={styles.icon}
-									<path
-										d="M40.6514 5.78617C40.3916 5.42327 40.043 5.24182 39.6055 5.24182H11.7559L11 3.27403C10.8086 2.62887 10.5488 2.07779 10.2207 1.6208C9.89258 1.16381 9.54395 0.841232 9.1748 0.65306C8.80566 0.464888 8.48438 0.3372 8.21094 0.269996C7.9375 0.202792 7.66406 0.169189 7.39062 0.169189H1.77148C1.41602 0.169189 1.11523 0.290157 0.869141 0.532093C0.623047 0.774028 0.5 1.08317 0.5 1.45951C0.5 1.67457 0.554688 1.8829 0.664062 2.08451C0.773438 2.28612 0.930664 2.44069 1.13574 2.54822C1.34082 2.65575 1.55273 2.70951 1.77148 2.70951H7.39062C7.5 2.70951 7.60254 2.72295 7.69824 2.74983C7.79395 2.77672 7.92383 2.89096 8.08789 3.09258C8.25195 3.29419 8.38867 3.59661 8.49805 3.99983L14.3809 20.1531C14.4355 20.3144 14.5244 20.4689 14.6475 20.6168C14.7705 20.7646 14.9141 20.8789 15.0781 20.9595C15.2422 21.0402 15.4199 21.0805 15.6113 21.0805H33.3301C33.6035 21.0805 33.8564 20.9998 34.0889 20.8385C34.3213 20.6773 34.4785 20.4756 34.5605 20.2337L40.8359 6.97569C40.9727 6.54558 40.9111 6.14908 40.6514 5.78617ZM32.4277 18.4998H16.6367L12.4531 7.82246H37.7188L32.4277 18.4998ZM30.0625 22.4798C29.1602 22.4798 28.3877 22.7957 27.7451 23.4274C27.1025 24.0591 26.7812 24.8186 26.7812 25.7057C26.7812 26.5928 27.1025 27.3522 27.7451 27.9839C28.3877 28.6156 29.1602 28.9315 30.0625 28.9315C30.9648 28.9315 31.7373 28.6156 32.3799 27.9839C33.0225 27.3522 33.3438 26.5928 33.3438 25.7057C33.3438 24.8186 33.0225 24.0591 32.3799 23.4274C31.7373 22.7957 30.9648 22.4798 30.0625 22.4798ZM18.25 22.4798C17.6484 22.4798 17.0947 22.6277 16.5889 22.9234C16.083 23.2191 15.6865 23.6089 15.3994 24.0927C15.1123 24.5766 14.9688 25.1143 14.9688 25.7057C14.9688 26.5928 15.29 27.3522 15.9326 27.9839C16.5752 28.6156 17.3477 28.9315 18.25 28.9315C19.1523 28.9315 19.9248 28.6156 20.5674 27.9839C21.21 27.3522 21.5312 26.5928 21.5312 25.7057C21.5312 25.4906 21.5107 25.2755 21.4697 25.0605C21.4287 24.8454 21.3672 24.6438 21.2852 24.4557C21.2031 24.2675 21.1006 24.086 20.9775 23.9113C20.8545 23.7366 20.7178 23.5753 20.5674 23.4274C20.417 23.2796 20.2529 23.1452 20.0752 23.0242C19.8975 22.9032 19.7129 22.8024 19.5215 22.7218C19.3301 22.6411 19.125 22.5806 18.9062 22.5403C18.6875 22.5 18.4688 22.4798 18.25 22.4798Z"
-										fill="#3F4E65"
-									/>
-								</svg>
-
-								<span className={styles.counter}>{items.length}</span>
-							</div>
-							<div className={styles.priceWrapper}>
-								<div className={styles.cartTitle}>Корзина</div>
-								<div className={styles.price}>
-									{totalPrice.toFixed(2)}
-									<span className={styles.priceСurrency}>₸</span>
-								</div>
-							</div>
+						<div className={styles.iconWrapper}>
+							<svg
+								width="22"
+								height="16"
+								viewBox="0 0 41 29"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								className={styles.logo}
+								<path
+									d="M40.6514 5.78617C40.3916 5.42327 40.043 5.24182 39.6055 5.24182H11.7559L11 3.27403C10.8086 2.62887 10.5488 2.07779 10.2207 1.6208C9.89258 1.16381 9.54395 0.841232 9.1748 0.65306C8.80566 0.464888 8.48438 0.3372 8.21094 0.269996C7.9375 0.202792 7.66406 0.169189 7.39062 0.169189H1.77148C1.41602 0.169189 1.11523 0.290157 0.869141 0.532093C0.623047 0.774028 0.5 1.08317 0.5 1.45951C0.5 1.67457 0.554688 1.8829 0.664062 2.08451C0.773438 2.28612 0.930664 2.44069 1.13574 2.54822C1.34082 2.65575 1.55273 2.70951 1.77148 2.70951H7.39062C7.5 2.70951 7.60254 2.72295 7.69824 2.74983C7.79395 2.77672 7.92383 2.89096 8.08789 3.09258C8.25195 3.29419 8.38867 3.59661 8.49805 3.99983L14.3809 20.1531C14.4355 20.3144 14.5244 20.4689 14.6475 20.6168C14.7705 20.7646 14.9141 20.8789 15.0781 20.9595C15.2422 21.0402 15.4199 21.0805 15.6113 21.0805H33.3301C33.6035 21.0805 33.8564 20.9998 34.0889 20.8385C34.3213 20.6773 34.4785 20.4756 34.5605 20.2337L40.8359 6.97569C40.9727 6.54558 40.9111 6.14908 40.6514 5.78617ZM32.4277 18.4998H16.6367L12.4531 7.82246H37.7188L32.4277 18.4998ZM30.0625 22.4798C29.1602 22.4798 28.3877 22.7957 27.7451 23.4274C27.1025 24.0591 26.7812 24.8186 26.7812 25.7057C26.7812 26.5928 27.1025 27.3522 27.7451 27.9839C28.3877 28.6156 29.1602 28.9315 30.0625 28.9315C30.9648 28.9315 31.7373 28.6156 32.3799 27.9839C33.0225 27.3522 33.3438 26.5928 33.3438 25.7057C33.3438 24.8186 33.0225 24.0591 32.3799 23.4274C31.7373 22.7957 30.9648 22.4798 30.0625 22.4798ZM18.25 22.4798C17.6484 22.4798 17.0947 22.6277 16.5889 22.9234C16.083 23.2191 15.6865 23.6089 15.3994 24.0927C15.1123 24.5766 14.9688 25.1143 14.9688 25.7057C14.9688 26.5928 15.29 27.3522 15.9326 27.9839C16.5752 28.6156 17.3477 28.9315 18.25 28.9315C19.1523 28.9315 19.9248 28.6156 20.5674 27.9839C21.21 27.3522 21.5312 26.5928 21.5312 25.7057C21.5312 25.4906 21.5107 25.2755 21.4697 25.0605C21.4287 24.8454 21.3672 24.6438 21.2852 24.4557C21.2031 24.2675 21.1006 24.086 20.9775 23.9113C20.8545 23.7366 20.7178 23.5753 20.5674 23.4274C20.417 23.2796 20.2529 23.1452 20.0752 23.0242C19.8975 22.9032 19.7129 22.8024 19.5215 22.7218C19.3301 22.6411 19.125 22.5806 18.9062 22.5403C18.6875 22.5 18.4688 22.4798 18.25 22.4798Z"
+									fill="#3F4E65"
+								/>
+							</svg>
+							<span className={styles.counter}>{items.length}</span>
 						</div>
 					</Link>
 				</div>
 			</div>
-		</div>
+
+			<div className={styles.headerBottom}>
+				<div className={styles.container}>
+					<div className={styles.catalogWrapper}>
+						<Link to="/catalog">
+							<button className={styles.catalogBtn}>
+								<svg
+									width="15"
+									height="15"
+									viewBox="0 0 15 15"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									className={styles.icon}>
+									<path
+										d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H6C6.27614 0.5 6.5 0.723858 6.5 1V6C6.5 6.27614 6.27614 6.5 6 6.5H1C0.723858 6.5 0.5 6.27614 0.5 6V2Z"
+										stroke="#3F4E65"
+									/>
+									<path
+										d="M8.5 1C8.5 0.723858 8.72386 0.5 9 0.5H13C13.8284 0.5 14.5 1.17157 14.5 2V6C14.5 6.27614 14.2761 6.5 14 6.5H9C8.72386 6.5 8.5 6.27614 8.5 6V1Z"
+										stroke="#3F4E65"
+									/>
+									<path
+										d="M8.5 9C8.5 8.72386 8.72386 8.5 9 8.5H14C14.2761 8.5 14.5 8.72386 14.5 9V13C14.5 13.8284 13.8284 14.5 13 14.5H9C8.72386 14.5 8.5 14.2761 8.5 14V9Z"
+										stroke="#3F4E65"
+									/>
+									<path
+										d="M0.5 9C0.5 8.72386 0.723858 8.5 1 8.5H6C6.27614 8.5 6.5 8.72386 6.5 9V14C6.5 14.2761 6.27614 14.5 6 14.5H2C1.17157 14.5 0.5 13.8284 0.5 13V9Z"
+										stroke="#3F4E65"
+									/>
+								</svg>
+								Каталог
+							</button>
+						</Link>
+					</div>
+					<div className={styles.search}>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							className={styles.icon}>
+							<path
+								d="M13.125 13.125L10.3212 10.3162L13.125 13.125ZM11.875 6.5625C11.875 7.97146 11.3153 9.32272 10.319 10.319C9.32272 11.3153 7.97146 11.875 6.5625 11.875C5.15354 11.875 3.80228 11.3153 2.806 10.319C1.80971 9.32272 1.25 7.97146 1.25 6.5625C1.25 5.15354 1.80971 3.80228 2.806 2.806C3.80228 1.80971 5.15354 1.25 6.5625 1.25C7.97146 1.25 9.32272 1.80971 10.319 2.806C11.3153 3.80228 11.875 5.15354 11.875 6.5625V6.5625Z"
+								stroke="#3F4E65"
+								stroke-linecap="round"
+							/>
+						</svg>
+						Поиск
+					</div>
+				</div>
+			</div>
+		</header>
 	);
 };
 
-export default HeaderMain;
+export default HeaderMobile;

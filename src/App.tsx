@@ -8,11 +8,13 @@ import Cart from './pages/Cart/Cart';
 import Product from './pages/Product/Product';
 import mock from './mock/index.json';
 import FormCheckout from './pages/FormCheckout/FormCheckout';
+import HeaderMobile from './components/HeaderMobile/HeaderMobile';
 
 function App(): JSX.Element {
 	return (
 		<div className={styles.app}>
 			<Header />
+			<HeaderMobile />
 			<div className={styles.container}>
 				<Routes>
 					<Route path="/cart" element={<Cart />} />

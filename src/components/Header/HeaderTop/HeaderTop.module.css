@@ -17,7 +17,6 @@
 .item {
 	padding-left: 35px;
 	padding-right: 20px;
-	text-align: left;
 	position: relative;
 }
 .item:not(:last-of-type) {
@@ -49,6 +48,7 @@
 	font-weight: 600;
 }
 .text {
+	color: #3f4e65;
 	font-size: 12px;
 	font-weight: 300;
 }
@@ -79,6 +79,15 @@
 		gap: 10px;
 	}
 	.nav {
-		justify-content: flex-end;
+		justify-content: center;
+	}
+	.row {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 725px) {
+	.top {
+		display: none;
 	}
 }
