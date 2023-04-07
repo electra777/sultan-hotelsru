@@ -68,3 +68,9 @@
 .currency {
 	margin-left: 4px;
 }
+
+@media (max-width: 465px) {
+	.productCard {
+		padding: 30px 15px;
+	}
+}

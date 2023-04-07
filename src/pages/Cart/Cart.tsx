@@ -38,7 +38,7 @@ const Cart = () => {
 							<div className={styles.colLeft}>
 								<Link to={`/catalog/${item.barcode}`}>
 									<div className={styles.imgWrapper}>
-										<img src={item.image.url} alt={item.image.alt} />
+										<img src={item.image.url} alt={item.image.alt} className={styles.img} />
 									</div>
 								</Link>
 								<div className={styles.productsDescription}>
@@ -96,21 +96,24 @@ const Cart = () => {
 									<div className={styles.productsText}>{item.description}</div>
 								</div>
 							</div>
-							<div className={styles.quantityWrapper}>
-								<button className={styles.minus} onClick={() => handleClickMinus(item.barcode)}>
-									-
-								</button>
-								<span className={styles.quantity}>{item.count}</span>
-								<button className={styles.plus} onClick={() => handleClickPlus(item.barcode)}>
-									+
-								</button>
-							</div>
-							<div className={styles.productsPrice}>
-								{item.price}
-								<span className={styles.currency}>₸</span>
-							</div>
 
-							<Button icon="trash" handleClick={() => onClickDelete(item.barcode)}></Button>
+							<div className={styles.colRight}>
+								<div className={styles.quantityWrapper}>
+									<button className={styles.minus} onClick={() => handleClickMinus(item.barcode)}>
+										-
+									</button>
+									<span className={styles.quantity}>{item.count}</span>
+									<button className={styles.plus} onClick={() => handleClickPlus(item.barcode)}>
+										+
+									</button>
+								</div>
+								<div className={styles.productsPrice}>
+									{item.price}
+									<span className={styles.currency}>₸</span>
+								</div>
+
+								<Button icon="trash" handleClick={() => onClickDelete(item.barcode)}></Button>
+							</div>
 						</li>
 					);
 				})}
