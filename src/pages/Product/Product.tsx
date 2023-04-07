@@ -86,6 +86,16 @@ const Product = () => {
 		dispatch(addItem(item));
 	};
 
+	const [isActiveDescr, setIsActiveDescr] = useState(false);
+	const [isActiveFeature, setIsActiveFeature] = useState(false);
+
+	const setActiveDescr = () => {
+		setIsActiveDescr(!isActiveDescr);
+	};
+	const setActiveFeature = () => {
+		setIsActiveFeature(!isActiveFeature);
+	};
+
 	return (
 		<div className={styles.productWrapper}>
 			<Breadcrumbs></Breadcrumbs>
@@ -209,12 +219,40 @@ const Product = () => {
 					</div>
 
 					<div className={styles.descriptionWrapper}>
-						<div className={styles.descriptionTitle}>Описание</div>
+						<button
+							className={cn(styles.showText, { [styles.isActive]: isActiveDescr })}
+							onClick={setActiveDescr}>
+							Описание
+							<svg
+								width="7"
+								height="6"
+								viewBox="0 0 7 6"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								className={styles.arrowIcon}>
+								<path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
+							</svg>
+						</button>
+
 						<div className={styles.description}>{data.description}</div>
+						<div className={styles.line}></div>
 					</div>
 
 					<div className={styles.featureFull}>
-						<div className={styles.featureTitle}>Характеристики</div>
+						<button
+							className={cn(styles.showText, { [styles.isActive]: isActiveFeature })}
+							onClick={setActiveFeature}>
+							Характеристики
+							<svg
+								width="7"
+								height="6"
+								viewBox="0 0 7 6"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								className={styles.arrowIcon}>
+								<path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
+							</svg>
+						</button>
 						<div className={styles.featureFullWrapper}>
 							<div className={styles.destination}>
 								Назначение:

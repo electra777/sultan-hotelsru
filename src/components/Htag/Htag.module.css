@@ -6,3 +6,9 @@
 	text-transform: uppercase;
 	padding-bottom: 50px;
 }
+
+@media (max-width: 725px) {
+	.hTag {
+		font-size: 34px;
+	}
+}

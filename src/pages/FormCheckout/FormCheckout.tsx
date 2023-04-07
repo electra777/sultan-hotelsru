@@ -51,22 +51,22 @@ const FormCheckout = () => {
 									d="M19.5 29.5L24.75 34.5L27.375 31.5"
 									stroke="white"
 									stroke-width="2"
-									stroke-linecap="round"
+									strokeLinecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M25.5 29.5L30.75 34.5L39.5 24.5"
 									stroke="white"
 									stroke-width="2"
-									stroke-linecap="round"
+									strokeLinecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M33.5 24.5L30 28.5"
 									stroke="white"
 									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 								/>
 							</svg>
 						</div>
