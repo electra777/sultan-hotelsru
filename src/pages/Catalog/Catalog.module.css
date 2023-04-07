@@ -31,12 +31,33 @@
 .aside {
 }
 
+.asideTitleWrapper {
+	display: flex;
+	align-items: center;
+}
+.showFilter {
+	background-color: #ffe4b2;
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.showFilter.isActive .filterIcon {
+	transform: rotate(180deg);
+}
+
+.asideTitleWrapper {
+	margin: 20px 0 10px;
+}
 .asideTitle {
 	color: #111111;
 	font-size: 16px;
 	font-weight: 500;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-right: 10px;
 }
 .priceTitle {
 	color: #3f4e65;
@@ -142,6 +163,38 @@
 
 .content {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 	gap: 21px;
+}
+
+@media (max-width: 725px) {
+	.topMenu {
+		display: none;
+	}
+	.catalog {
+		grid-template-columns: auto;
+	}
+	.asideWrapper {
+		display: none;
+		margin-bottom: 15px;
+	}
+	.asideTitleWrapper {
+		margin: 0 0 10px;
+	}
+	.showFilter {
+		display: flex;
+	}
+	.asideWrapper.isActive {
+		display: block;
+	}
+	.filterTitle {
+		display: none;
+	}
+}
+
+@media (max-width: 465px) {
+	.showFilter {
+		width: 32px;
+		height: 32px;
+	}
 }

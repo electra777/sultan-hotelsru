@@ -9,6 +9,19 @@
 
 @media (max-width: 725px) {
 	.hTag {
-		font-size: 34px;
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+}
+
+@media (max-width: 465px) {
+	.hTag {
+		font-size: 26px;
+	}
+}
+
+@media (max-width: 375px) {
+	.hTag {
+		font-size: 20px;
 	}
 }
