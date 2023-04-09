@@ -127,7 +127,7 @@
 	margin-left: 3px;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1370px) {
 	.container {
 		flex-direction: column;
 		align-items: initial;

@@ -21,7 +21,7 @@ export const fetchData = createAsyncThunk(
 	'productCard/fetchData',
 	async (_, { rejectWithValue }) => {
 		try {
-			const response = await fetch('https://6429dc92b11efeb7598f769f.mockapi.io/catalog');
+			const response = await fetch('https://6429dc92b11efeb7598f769f.mockapi.io/catalog?');
 			if (!response.ok) {
 				throw new Error('Server Error!');
 			}

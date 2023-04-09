@@ -33,8 +33,18 @@ const Catalog = () => {
 		<div className={styles.catalogWrapper}>
 			<Breadcrumbs></Breadcrumbs>
 			<div className={styles.top}>
-				<Htag>Косметика и гигиена</Htag>
-				<div className={styles.sortingWrapper}></div>
+				<div className={styles.sortingWrapper}>
+					<Htag>Косметика и гигиена</Htag>
+					<div className={styles.sortingSelectWrapper}>
+						<span className={styles.sortTitle}>Сортировка:</span>
+						<ul className={styles.sortSelect}>
+							<li>Название (по возрастанию)</li>
+							<li>Название (по убыванию)</li>
+							<li>Цена (по возрастанию)</li>
+							<li>Цена (по убыванию)</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div className={styles.topMenu}>
 				<div className={styles.topItem}>Уход за телом</div>

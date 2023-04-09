@@ -31,6 +31,7 @@
 	background-color: #fff;
 	padding: 30px;
 	padding-bottom: 135px;
+	margin: 0 15px;
 }
 .btn {
 	width: 24px;
@@ -291,4 +292,51 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 40px;
+}
+
+@media (max-width: 1370px) {
+	.checkout {
+		display: block;
+	}
+}
+
+@media (max-width: 1100px) {
+	.colLeft {
+		gap: 25px;
+	}
+}
+
+@media (max-width: 725px) {
+	.colLeft {
+		grid-template-columns: 1fr;
+	}
+	.text {
+		font-size: 16px;
+	}
+	.popupIconWrapper {
+		margin-bottom: 10px;
+	}
+	.colRightTitle {
+		display: none;
+	}
+	.products {
+		display: none;
+	}
+}
+
+@media (max-width: 465px) {
+	.popup {
+		padding: 10px;
+		padding-bottom: 87px;
+	}
+	.btn {
+		margin-bottom: 25px;
+	}
+}
+
+@media (max-width: 375px) {
+	.text {
+		font-size: 12px;
+		max-width: 200px;
+	}
 }
