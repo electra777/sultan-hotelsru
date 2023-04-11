@@ -2,10 +2,11 @@ import styles from './Product.module.css';
 import Button from '../../components/Button/Button';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { addItem } from '../../redux/slices/cartSlice';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import cn from 'classnames';
+import { cartSelector } from '../../redux/slices/cartSlice';
 
 const Product = () => {
 	const initialState = {
@@ -47,6 +48,7 @@ const Product = () => {
 	const [data, setData] = useState<IProduct>(initialState);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		fetch(`https://6429dc92b11efeb7598f769f.mockapi.io/${location.pathname}`)
 			.then((res) => res.json())
 			.then((data) => {
@@ -55,6 +57,10 @@ const Product = () => {
 	}, []);
 
 	const [count, setCount] = useState(1);
+
+	const { items } = useAppSelector((state) => state.cart);
+
+	console.log(items, 'items');
 
 	const handleClickPlus = () => {
 		setCount(count + 1);
@@ -80,8 +86,6 @@ const Product = () => {
 			count,
 			inCart: true,
 		};
-
-		console.log(count, 'count');
 
 		dispatch(addItem(item));
 	};
@@ -169,7 +173,7 @@ const Product = () => {
 							<button className={styles.minus} onClick={handleClickMinus}>
 								-
 							</button>
-							<span className={styles.quantity}>{count}</span>
+							<span className={styles.quantity}>{}</span>
 							<button className={styles.plus} onClick={handleClickPlus}>
 								+
 							</button>

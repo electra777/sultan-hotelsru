@@ -21,9 +21,9 @@ function App(): JSX.Element {
 					<Route path="/" element={<Index />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/catalog" element={<Catalog />} />
-					<Route path={`/catalog/:barcode`} element={<Product />} />
-					<Route path={`/checkout`} element={<FormCheckout />} />
-					<Route path={`*`} element={<NotFound />} />
+					<Route path="/catalog/:barcode" element={<Product />} />
+					<Route path="/checkout" element={<FormCheckout />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 			<Footer />

@@ -4,7 +4,7 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Htag from '../../components/Htag/Htag';
 
@@ -14,6 +14,10 @@ const FormCheckout = () => {
 	const [activePopup, setActivePopup] = useState(false);
 
 	const body: any = document.querySelector('body');
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
