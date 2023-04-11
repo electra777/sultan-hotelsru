@@ -16,6 +16,7 @@ const Catalog = () => {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		dispatch(fetchData());
 	}, [dispatch]);
 
