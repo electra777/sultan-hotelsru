@@ -30,7 +30,7 @@
 .catalog {
 	display: grid;
 	grid-template-columns: 238px 1fr;
-	gap: 108px;
+	gap: 50px 108px;
 }
 
 .aside {
@@ -174,7 +174,13 @@
 .content {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	align-items: baseline;
 	gap: 21px;
+}
+
+.seoText {
+	grid-column: 2/3;
+	max-width: 910px;
 }
 
 @media (max-width: 725px) {
@@ -199,6 +205,9 @@
 	}
 	.filterTitle {
 		display: none;
+	}
+	.seoText {
+		grid-column: initial;
 	}
 }
 
