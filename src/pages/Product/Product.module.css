@@ -99,10 +99,15 @@
 .share {
 	padding: 25px 29px;
 	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
+	transition: 0.5s;
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+}
+.share:hover {
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.5);
+	transition: 0.5s;
 }
 .delivery {
 	color: #3f4e65;
@@ -117,6 +122,7 @@
 	font-size: 14px;
 	font-weight: 700;
 	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
+	transition: 0.5s;
 	border-radius: 10px;
 	cursor: pointer;
 	display: flex;
@@ -134,6 +140,10 @@
 	width: 17px;
 	height: 17px;
 	background: url('../../assets/images/download-black.svg') no-repeat;
+}
+.priceList:hover {
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.5);
+	transition: 0.5s;
 }
 
 .featureShort {

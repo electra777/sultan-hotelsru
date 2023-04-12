@@ -8,6 +8,7 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Htag from '../../components/Htag/Htag';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Pagination from '../../components/Pagination/Pagination';
 import cn from 'classnames';
 
 const Catalog = () => {
@@ -15,10 +16,12 @@ const Catalog = () => {
 
 	const dispatch = useAppDispatch();
 
+	const [currentPage, setCurrentPage] = useState(1);
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		dispatch(fetchData());
-	}, [dispatch]);
+		dispatch(fetchData(currentPage));
+	}, [dispatch, currentPage]);
 
 	const productCards = data.map((item) => {
 		return <ProductCard {...item} key={item.barcode} />;
@@ -148,6 +151,15 @@ const Catalog = () => {
 					</div>
 				</aside>
 				<div className={styles.content}>{loading ? <div>Loading...</div> : productCards}</div>
+
+				<Pagination onChangePage={(number: number) => setCurrentPage(number)} />
+
+				<div className={styles.seoText}>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo,
+					vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis.
+					Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris
+					venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.
+				</div>
 			</div>
 		</div>
 	);

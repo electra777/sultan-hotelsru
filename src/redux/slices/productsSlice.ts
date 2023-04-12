@@ -19,9 +19,12 @@ const initialState: ProductCardModel = {
 
 export const fetchData = createAsyncThunk(
 	'productCard/fetchData',
-	async (_, { rejectWithValue }) => {
+	async (currentPage: number, { rejectWithValue }) => {
 		try {
-			const response = await fetch('https://6429dc92b11efeb7598f769f.mockapi.io/catalog?');
+			const response = await fetch(
+				`https://6429dc92b11efeb7598f769f.mockapi.io/catalog?page=${currentPage}&limit=9`,
+			);
+
 			if (!response.ok) {
 				throw new Error('Server Error!');
 			}
