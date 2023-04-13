@@ -33,6 +33,12 @@ const Catalog = () => {
 		setIsActiveFilter(!isActiveFilter);
 	};
 
+	const [isSortSelect, setIsSortSelect] = useState(false);
+
+	const setSortSelect = () => {
+		setIsSortSelect(!isSortSelect);
+	};
+
 	return (
 		<div className={styles.catalogWrapper}>
 			<Breadcrumbs></Breadcrumbs>
@@ -41,11 +47,27 @@ const Catalog = () => {
 					<Htag>Косметика и гигиена</Htag>
 					<div className={styles.sortingSelectWrapper}>
 						<span className={styles.sortTitle}>Сортировка:</span>
+
+						<button
+							className={cn(styles.sortShowSelect, { [styles.isActive]: isSortSelect })}
+							onClick={setSortSelect}>
+							Название (по возрастанию)
+							<svg
+								width="7"
+								height="6"
+								viewBox="0 0 7 6"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								className={styles.arrowSortIcon}>
+								<path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
+							</svg>
+						</button>
+
 						<ul className={styles.sortSelect}>
-							<li>Название (по возрастанию)</li>
-							<li>Название (по убыванию)</li>
-							<li>Цена (по возрастанию)</li>
-							<li>Цена (по убыванию)</li>
+							<li className={styles.sortSelectItem}>Название (по возрастанию)</li>
+							<li className={styles.sortSelectItem}>Название (по убыванию)</li>
+							<li className={styles.sortSelectItem}>Цена (по возрастанию)</li>
+							<li className={styles.sortSelectItem}>Цена (по убыванию)</li>
 						</ul>
 					</div>
 				</div>
