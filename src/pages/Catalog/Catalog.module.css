@@ -48,6 +48,7 @@
 	display: none;
 }
 .sortSelectItem {
+	width: 240px;
 	padding: 5px 10px;
 	cursor: pointer;
 	transition: 0.5s;
@@ -186,27 +187,26 @@
 	padding-left: 10px;
 }
 
-.showAll {
+.showAllManufacturer {
 	color: #3f4e65;
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 1;
+	border: none;
 	margin-top: 15px;
 	margin-bottom: 25px;
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
 }
-.showAll::after {
-	content: '';
-	position: absolute;
-	width: 7px;
-	height: 7px;
-	left: 85px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	background: url('../../assets/images/select-arrow.svg') no-repeat;
+.arrowShowAll {
+	margin-left: 5px;
+	transition: 0.3s;
+}
+
+.showAllManufacturer.isActive .arrowShowAll {
+	transform: rotate(180deg);
+	transition: 0.3s;
 }
 
 .btnsGroup {

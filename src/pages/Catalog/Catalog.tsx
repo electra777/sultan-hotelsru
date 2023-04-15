@@ -18,10 +18,16 @@ const Catalog = () => {
 
 	const [currentPage, setCurrentPage] = useState(1);
 
+	const [orderBy, setOrderBy] = useState('');
+
+	const [key, setKey] = useState('');
+
+	let param = [currentPage, key, orderBy];
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		dispatch(fetchData(currentPage));
-	}, [dispatch, currentPage]);
+		dispatch(fetchData(param));
+	}, [dispatch, currentPage, key, orderBy]);
 
 	const productCards = data.map((item) => {
 		return <ProductCard {...item} key={item.barcode} />;
@@ -39,6 +45,32 @@ const Catalog = () => {
 		setIsSortSelect(!isSortSelect);
 	};
 
+	const [isShowAllManufacturer, setIsShowAllManufacturer] = useState(false);
+
+	const setShowAllManufacturer = () => {
+		setIsShowAllManufacturer(!isShowAllManufacturer);
+	};
+
+	const [sortName, setSortName] = useState('Название (по возрастанию)');
+
+	const handleSortByName = (order: string) => {
+		let name = order === 'asc' ? 'по возрастанию' : 'по убыванию';
+
+		setKey('name');
+		setOrderBy(order);
+		setSortName(`Название (${name})`);
+		setSortSelect();
+	};
+
+	const handleSortByPrice = (order: string) => {
+		let name = order === 'asc' ? 'по возрастанию' : 'по убыванию';
+
+		setKey('price');
+		setOrderBy(order);
+		setSortName(`Цена (${name})`);
+		setSortSelect();
+	};
+
 	return (
 		<div className={styles.catalogWrapper}>
 			<Breadcrumbs></Breadcrumbs>
@@ -51,7 +83,7 @@ const Catalog = () => {
 						<button
 							className={cn(styles.sortShowSelect, { [styles.isActive]: isSortSelect })}
 							onClick={setSortSelect}>
-							Название (по возрастанию)
+							{sortName}
 							<svg
 								width="7"
 								height="6"
@@ -64,10 +96,34 @@ const Catalog = () => {
 						</button>
 
 						<ul className={styles.sortSelect}>
-							<li className={styles.sortSelectItem}>Название (по возрастанию)</li>
-							<li className={styles.sortSelectItem}>Название (по убыванию)</li>
-							<li className={styles.sortSelectItem}>Цена (по возрастанию)</li>
-							<li className={styles.sortSelectItem}>Цена (по убыванию)</li>
+							<li
+								className={styles.sortSelectItem}
+								onClick={() => {
+									handleSortByName('asc');
+								}}>
+								Название (по возрастанию)
+							</li>
+							<li
+								className={styles.sortSelectItem}
+								onClick={() => {
+									handleSortByName('desc');
+								}}>
+								Название (по убыванию)
+							</li>
+							<li
+								className={styles.sortSelectItem}
+								onClick={() => {
+									handleSortByPrice('asc');
+								}}>
+								Цена (по возрастанию)
+							</li>
+							<li
+								className={styles.sortSelectItem}
+								onClick={() => {
+									handleSortByPrice('desc');
+								}}>
+								Цена (по убыванию)
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -135,21 +191,40 @@ const Catalog = () => {
 										Нэфис <span className={styles.count}>(1)</span>
 									</label>
 								</div>
-								<div className={styles.checkboxesGroup}>
-									<input type="checkbox" id="grifon" className={styles.input} />
-									<label htmlFor="grifon" className={styles.label}>
-										Grifon <span className={styles.count}>(0)</span>
-									</label>
-								</div>
-								<div className={styles.checkboxesGroup}>
-									<input type="checkbox" id="nivea" className={styles.input} />
-									<label htmlFor="nivea" className={styles.label}>
-										Nivea <span className={styles.count}>(0)</span>
-									</label>
-								</div>
-								<div className={styles.showAll}>
-									Показать все <span className={styles.arrow}></span>
-								</div>
+
+								{isShowAllManufacturer && (
+									<div className={styles.checkboxesGroupWrapper}>
+										<div className={styles.checkboxesGroup}>
+											<input type="checkbox" id="grifon" className={styles.input} />
+											<label htmlFor="grifon" className={styles.label}>
+												Grifon <span className={styles.count}>(0)</span>
+											</label>
+										</div>
+										<div className={styles.checkboxesGroup}>
+											<input type="checkbox" id="nivea" className={styles.input} />
+											<label htmlFor="nivea" className={styles.label}>
+												Nivea <span className={styles.count}>(0)</span>
+											</label>
+										</div>
+									</div>
+								)}
+
+								<button
+									className={cn(styles.showAllManufacturer, {
+										[styles.isActive]: isShowAllManufacturer,
+									})}
+									onClick={setShowAllManufacturer}>
+									Показать все
+									<svg
+										width="7"
+										height="6"
+										viewBox="0 0 7 6"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										className={styles.arrowShowAll}>
+										<path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
+									</svg>
+								</button>
 							</div>
 							<div className={styles.btnsGroup}>
 								<Button>Показать</Button>

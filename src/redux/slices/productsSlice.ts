@@ -19,10 +19,11 @@ const initialState: ProductCardModel = {
 
 export const fetchData = createAsyncThunk(
 	'productCard/fetchData',
-	async (currentPage: number, { rejectWithValue }) => {
+	async (param: any, { rejectWithValue }) => {
+		const [currentPage, key, orderBy] = param;
 		try {
 			const response = await fetch(
-				`https://6429dc92b11efeb7598f769f.mockapi.io/catalog?page=${currentPage}&limit=9`,
+				`https://6429dc92b11efeb7598f769f.mockapi.io/catalog?page=${currentPage}&limit=9&sortBy=${key}&order=${orderBy}`,
 			);
 
 			if (!response.ok) {
