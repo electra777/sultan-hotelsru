@@ -233,7 +233,7 @@
 		justify-content: center;
 	}
 	.info {
-		justify-content: space-around;
+		justify-content: center;
 	}
 }
 
@@ -242,7 +242,8 @@
 		display: none;
 	}
 	.priceWrapper {
-		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 20px;
 	}
 	.imgWrapper {
 		max-height: 290px;
@@ -253,6 +254,10 @@
 	}
 	.price {
 		font-size: 26px;
+	}
+
+	.info {
+		flex-wrap: wrap;
 	}
 }
 
@@ -269,5 +274,18 @@
 	}
 	.price {
 		font-size: 20px;
+	}
+}
+
+@media (max-width: 435px) {
+	.delivery {
+		max-width: 100%;
+	}
+	.priceList {
+		width: 100%;
+		justify-content: center;
+	}
+	.priceList::after {
+		right: 75px;
 	}
 }
