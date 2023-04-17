@@ -8,11 +8,12 @@
 		"volume": 450,
 		"size": 450,
 		"barcode": "4604049097540",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 48.76,
-		"inStock": true
+		"inStock": true,
+		"type": ["Уход за телом", "Уход за руками", "Средства для загара", "Гигиеническая продукция"]
 	},
 	{
 		"image": {
@@ -27,7 +28,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 19.56,
-		"inStock": true
+		"inStock": true,
+		"type": ["Уход за телом", "Уход за ногами", "Бумажная продукция"]
 	},
 	{
 		"image": {
@@ -43,7 +45,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 38.76,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Уход за лицом", "Подарочные наборы"]
 	},
 	{
 		"image": {
@@ -54,11 +57,12 @@
 		"weight": 1500,
 		"size": 1500,
 		"barcode": "4604049097543",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 13.99,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Уход за волосами", "Подарочные наборы"]
 	},
 	{
 		"image": {
@@ -73,7 +77,8 @@
 		"brand": "BioMio",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 39.09,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Средства для загара"]
 	},
 	{
 		"image": {
@@ -84,11 +89,12 @@
 		"volume": 450,
 		"size": 450,
 		"barcode": "4604049097545",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 22.43,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Средства для бритья", "Подарочные наборы"]
 	},
 	{
 		"image": {
@@ -103,7 +109,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 31.78,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Гигиеническая продукция", "Бумажная продукция"]
 	},
 	{
 		"image": {
@@ -119,7 +126,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 23.71,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Уход за руками", "Уход за лицом"]
 	},
 	{
 		"image": {
@@ -130,11 +138,12 @@
 		"weight": 1500,
 		"size": 1500,
 		"barcode": "4604049097548",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 41.54,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Уход за ногами"]
 	},
 	{
 		"image": {
@@ -149,7 +158,8 @@
 		"brand": "BioMio",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 48.76,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Уход за лицом", "Гигиеническая продукция", "Бумажная продукция"]
 	},
 	{
 		"image": {
@@ -160,11 +170,12 @@
 		"volume": 450,
 		"size": 450,
 		"barcode": "46040490975410",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 52.79,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Уход за волосами", "Подарочные наборы"]
 	},
 	{
 		"image": {
@@ -179,7 +190,14 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 48.76,
-		"inStock": "false"
+		"inStock": "false",
+		"type": [
+			"Уход за телом",
+			"Средства для загара",
+			"Уход за руками",
+			"Уход за ногами",
+			"Уход за лицом"
+		]
 	},
 	{
 		"image": {
@@ -195,7 +213,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 18.71,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Средства для бритья"]
 	},
 	{
 		"image": {
@@ -206,11 +225,12 @@
 		"weight": 1500,
 		"size": 1500,
 		"barcode": "46040490975413",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 66.08,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Подарочные наборы"]
 	},
 	{
 		"image": {
@@ -225,7 +245,8 @@
 		"brand": "BioMio",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 48.76,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Гигиеническая продукция"]
 	},
 	{
 		"image": {
@@ -236,11 +257,12 @@
 		"volume": 450,
 		"size": 450,
 		"barcode": "46040490975415",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 37.76,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Гигиена полости рта"]
 	},
 	{
 		"image": {
@@ -255,7 +277,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 41.99,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Бумажная продукция"]
 	},
 	{
 		"image": {
@@ -271,7 +294,8 @@
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 16.86,
-		"inStock": "false"
+		"inStock": "false",
+		"type": ["Уход за телом", "Подарочные наборы", "Гигиеническая продукция"]
 	},
 	{
 		"image": {
@@ -282,11 +306,12 @@
 		"weight": 1500,
 		"size": 1500,
 		"barcode": "46040490975418",
-		"manufacturer": "Нэфис",
+		"manufacturer": "AOS",
 		"brand": "AOS",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 53.99,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Гигиена полости рта"]
 	},
 	{
 		"image": {
@@ -301,6 +326,7 @@
 		"brand": "BioMio",
 		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
 		"price": 28.71,
-		"inStock": "true"
+		"inStock": "true",
+		"type": ["Уход за телом", "Уход за лицом", "Средства для бритья"]
 	}
 ]

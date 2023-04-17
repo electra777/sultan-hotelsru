@@ -175,9 +175,6 @@
 	}
 }
 
-@media (max-width: 465px) {
-}
-
 @media (max-width: 375px) {
 	.colRight {
 		justify-content: center;
