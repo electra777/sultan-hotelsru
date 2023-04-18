@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './Catalog.module.css';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useEffect, useState } from 'react';
@@ -22,12 +23,14 @@ const Catalog = () => {
 
 	const [key, setKey] = useState('');
 
-	let param = [currentPage, key, orderBy];
+	const [checkboxFilter, setCheckboxFilter] = useState<any[]>([]);
+
+	let param = [currentPage, key, orderBy, checkboxFilter];
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		dispatch(fetchData(param));
-	}, [dispatch, currentPage, key, orderBy]);
+	}, [dispatch, currentPage, key, orderBy, checkboxFilter]);
 
 	const productCards = data.map((item) => {
 		return <ProductCard {...item} key={item.barcode} />;
@@ -69,6 +72,35 @@ const Catalog = () => {
 		setOrderBy(order);
 		setSortName(`Цена (${name})`);
 		setSortSelect();
+	};
+
+	type Inputs = {
+		aos: boolean;
+		biomio: boolean;
+		nefix: boolean;
+		grifon: boolean;
+		nivea: boolean;
+	};
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm<Inputs>();
+
+	const onSubmit: SubmitHandler<Inputs> = (data: any) => {
+		let arrFilters: any = [];
+
+		console.log(arrFilters, 'arrFilters');
+
+		for (const key in data) {
+			if (data[key] && !arrFilters.includes(key)) {
+				arrFilters.push(key);
+			}
+		}
+
+		setCheckboxFilter((prevArr) => [...prevArr, ...arrFilters]);
 	};
 
 	return (
@@ -172,21 +204,32 @@ const Catalog = () => {
 						<div className={styles.manufacturerWrapper}>
 							<div className={styles.manufacturerTitle}>Производитель</div>
 							<Input variant="search" placeholder="Поиск..." />
-							<div className={styles.checkboxesWrapper}>
+
+							<form className={styles.checkboxesWrapper} onSubmit={handleSubmit(onSubmit)}>
 								<div className={styles.checkboxesGroup}>
-									<input type="checkbox" id="aos" className={styles.input} />
+									<input type="checkbox" id="aos" {...register('aos')} className={styles.input} />
 									<label htmlFor="aos" className={styles.label}>
 										Aos <span className={styles.count}>(7)</span>
 									</label>
 								</div>
 								<div className={styles.checkboxesGroup}>
-									<input type="checkbox" id="biomio" className={styles.input} />
+									<input
+										type="checkbox"
+										id="biomio"
+										{...register('biomio')}
+										className={styles.input}
+									/>
 									<label htmlFor="biomio" className={styles.label}>
 										Biomio <span className={styles.count}>(5)</span>
 									</label>
 								</div>
 								<div className={styles.checkboxesGroup}>
-									<input type="checkbox" id="nefix" className={styles.input} />
+									<input
+										type="checkbox"
+										id="nefix"
+										{...register('nefix')}
+										className={styles.input}
+									/>
 									<label htmlFor="nefix" className={styles.label}>
 										Нэфис <span className={styles.count}>(1)</span>
 									</label>
@@ -195,13 +238,23 @@ const Catalog = () => {
 								{isShowAllManufacturer && (
 									<div className={styles.checkboxesGroupWrapper}>
 										<div className={styles.checkboxesGroup}>
-											<input type="checkbox" id="grifon" className={styles.input} />
+											<input
+												type="checkbox"
+												id="grifon"
+												{...register('grifon')}
+												className={styles.input}
+											/>
 											<label htmlFor="grifon" className={styles.label}>
 												Grifon <span className={styles.count}>(0)</span>
 											</label>
 										</div>
 										<div className={styles.checkboxesGroup}>
-											<input type="checkbox" id="nivea" className={styles.input} />
+											<input
+												type="checkbox"
+												id="nivea"
+												{...register('nivea')}
+												className={styles.input}
+											/>
 											<label htmlFor="nivea" className={styles.label}>
 												Nivea <span className={styles.count}>(0)</span>
 											</label>
@@ -213,7 +266,8 @@ const Catalog = () => {
 									className={cn(styles.showAllManufacturer, {
 										[styles.isActive]: isShowAllManufacturer,
 									})}
-									onClick={setShowAllManufacturer}>
+									onClick={setShowAllManufacturer}
+									type="button">
 									Показать все
 									<svg
 										width="7"
@@ -225,11 +279,12 @@ const Catalog = () => {
 										<path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
 									</svg>
 								</button>
-							</div>
-							<div className={styles.btnsGroup}>
-								<Button>Показать</Button>
-								<Button icon="trash"></Button>
-							</div>
+
+								<div className={styles.btnsGroup}>
+									<Button type="submit">Показать</Button>
+									<Button icon="trash" type="button" onClick={() => reset()}></Button>
+								</div>
+							</form>
 						</div>
 					</div>
 					<div className={styles.filter}>
