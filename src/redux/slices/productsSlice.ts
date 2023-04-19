@@ -20,9 +20,9 @@ const initialState: ProductCardModel = {
 export const fetchData = createAsyncThunk(
 	'productCard/fetchData',
 	async (param: any, { rejectWithValue }) => {
-		const [currentPage, key, orderBy, checkboxFilter] = param;
+		const [currentPage, key, orderBy, checkboxFilter, type] = param;
 
-		let url = `https://6429dc92b11efeb7598f769f.mockapi.io/catalog?page=${currentPage}&limit=9&sortBy=${key}&order=${orderBy}&manufacturer=${
+		let url = `https://6429dc92b11efeb7598f769f.mockapi.io/catalog?type=${type}&page=${currentPage}&limit=9&sortBy=${key}&order=${orderBy}&manufacturer=${
 			checkboxFilter.length > 1 ? `[${checkboxFilter}]` : checkboxFilter
 		}`;
 

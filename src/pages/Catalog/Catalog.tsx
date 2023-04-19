@@ -13,6 +13,19 @@ import Pagination from '../../components/Pagination/Pagination';
 import cn from 'classnames';
 
 const Catalog = () => {
+	const arrayTypes = [
+		'Уход за телом',
+		'Уход за руками',
+		'Уход за ногами',
+		'Уход за лицом',
+		'Уход за волосами',
+		'Средства для загара',
+		'Средства для бритья',
+		'Подарочные наборы',
+		'Гигиеническая продукция',
+		'Гигиена полости рта',
+		'Бумажная продукция',
+	];
 	const { data, loading } = useAppSelector(productsCardSelector);
 
 	const dispatch = useAppDispatch();
@@ -25,12 +38,21 @@ const Catalog = () => {
 
 	const [checkboxFilter, setCheckboxFilter] = useState<any[]>([]);
 
-	let param = [currentPage, key, orderBy, checkboxFilter];
+	const [type, setType] = useState('');
+
+	const handleChangeType = (item: any) => {
+		let itemTemp = item.replace(/ /g, '%20');
+		console.log(itemTemp, 'temp');
+
+		setType(itemTemp);
+	};
+
+	let param = [currentPage, key, orderBy, checkboxFilter, type];
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		dispatch(fetchData(param));
-	}, [dispatch, currentPage, key, orderBy, checkboxFilter]);
+	}, [dispatch, currentPage, key, orderBy, checkboxFilter, type]);
 
 	const productCards = data.map((item) => {
 		return <ProductCard {...item} key={item.barcode} />;
@@ -161,17 +183,18 @@ const Catalog = () => {
 				</div>
 			</div>
 			<div className={styles.topMenu}>
-				<div className={styles.topItem}>Уход за телом</div>
-				<div className={styles.topItem}>Уход за руками</div>
-				<div className={styles.topItem}>Уход за ногами</div>
-				<div className={styles.topItem}>Уход за лицом</div>
-				<div className={styles.topItem}>Уход за волосами</div>
-				<div className={styles.topItem}>Средства для загара</div>
-				<div className={styles.topItem}>Средства для бритья</div>
-				<div className={styles.topItem}>Подарочные наборы</div>
-				<div className={styles.topItem}>Гигиеническая продукция</div>
-				<div className={styles.topItem}>Гигиена полости рта</div>
-				<div className={styles.topItem}>Бумажная продукция</div>
+				{arrayTypes.map((item) => {
+					return (
+						<div
+							className={styles.topItem}
+							key={item}
+							onClick={() => {
+								handleChangeType(item);
+							}}>
+							{item}
+						</div>
+					);
+				})}
 			</div>
 			<div className={styles.catalog}>
 				<aside className={styles.aside}>
