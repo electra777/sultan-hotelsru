@@ -22,7 +22,9 @@ export const fetchData = createAsyncThunk(
 	async (param: any, { rejectWithValue }) => {
 		const [currentPage, key, orderBy, checkboxFilter, type] = param;
 
-		let url = `https://6429dc92b11efeb7598f769f.mockapi.io/catalog?type=${type}&page=${currentPage}&limit=9&sortBy=${key}&order=${orderBy}&manufacturer=${
+		let typeStr = type.replace(/ /g, '%20');
+
+		let url = `https://6429dc92b11efeb7598f769f.mockapi.io/catalog?type=${typeStr}&page=${currentPage}&limit=9&sortBy=${key}&order=${orderBy}&manufacturer=${
 			checkboxFilter.length > 1 ? `[${checkboxFilter}]` : checkboxFilter
 		}`;
 

@@ -41,10 +41,7 @@ const Catalog = () => {
 	const [type, setType] = useState('');
 
 	const handleChangeType = (item: any) => {
-		let itemTemp = item.replace(/ /g, '%20');
-		console.log(itemTemp, 'temp');
-
-		setType(itemTemp);
+		setType(item);
 	};
 
 	let param = [currentPage, key, orderBy, checkboxFilter, type];
@@ -186,7 +183,7 @@ const Catalog = () => {
 				{arrayTypes.map((item) => {
 					return (
 						<div
-							className={styles.topItem}
+							className={cn(styles.topItem, { [styles.isActive]: type === item })}
 							key={item}
 							onClick={() => {
 								handleChangeType(item);

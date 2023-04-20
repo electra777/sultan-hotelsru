@@ -90,6 +90,11 @@
 	box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.5);
 	transition: 0.5s;
 }
+.topItem.isActive {
+	background-color: #ffc85e;
+	color: #fff;
+	box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.5);
+}
 
 .catalog {
 	display: grid;
