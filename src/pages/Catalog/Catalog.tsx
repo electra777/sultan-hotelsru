@@ -47,7 +47,7 @@ const Catalog = () => {
 	let param = [currentPage, key, orderBy, checkboxFilter, type];
 
 	useEffect(() => {
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 		dispatch(fetchData(param));
 	}, [dispatch, currentPage, key, orderBy, checkboxFilter, type]);
 
@@ -309,17 +309,19 @@ const Catalog = () => {
 					</div>
 					<div className={styles.filter}>
 						<div className={styles.filterTitle}>Уход за телом</div>
-						<div className={styles.filterItem}>Уход за телом</div>
-						<div className={styles.filterItem}>Уход за руками</div>
-						<div className={styles.filterItem}>Уход за ногами</div>
-						<div className={styles.filterItem}>Уход за лицом</div>
-						<div className={styles.filterItem}>Уход за волосами</div>
-						<div className={styles.filterItem}>Средства для загара</div>
-						<div className={styles.filterItem}>Средства для бритья</div>
-						<div className={styles.filterItem}>Подарочные наборы</div>
-						<div className={styles.filterItem}>Гигиеническая продукция</div>
-						<div className={styles.filterItem}>Гигиена полости рта</div>
-						<div className={styles.filterItem}>Бумажная продукция</div>
+
+						{arrayTypes.map((item) => {
+							return (
+								<div
+									className={cn(styles.filterItem, { [styles.isActive]: type === item })}
+									key={item}
+									onClick={() => {
+										handleChangeType(item);
+									}}>
+									{item}
+								</div>
+							);
+						})}
 					</div>
 				</aside>
 				<div className={styles.content}>{loading ? <div>Loading...</div> : productCards}</div>
