@@ -8,6 +8,10 @@ const Index = () => {
 			<Link to="/catalog">
 				<h1 className={styles.title}>Каталог</h1>
 			</Link>
+
+			<Link to="/admin">
+				<h1 className={styles.title}>Микроадминка</h1>
+			</Link>
 		</div>
 	);
 };

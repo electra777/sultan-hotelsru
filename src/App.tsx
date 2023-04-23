@@ -10,6 +10,7 @@ import FormCheckout from './pages/FormCheckout/FormCheckout';
 import HeaderMobile from './components/HeaderMobile/HeaderMobile';
 import Index from './pages/Index/Index';
 import NotFound from './pages/NotFound/NotFound';
+import Admin from './pages/Admin/Admin';
 
 function App(): JSX.Element {
 	return (
@@ -23,6 +24,7 @@ function App(): JSX.Element {
 					<Route path="/catalog" element={<Catalog />} />
 					<Route path="/catalog/:barcode" element={<Product />} />
 					<Route path="/checkout" element={<FormCheckout />} />
+					<Route path="/admin" element={<Admin />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
