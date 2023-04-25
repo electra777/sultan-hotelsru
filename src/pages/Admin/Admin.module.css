@@ -8,6 +8,9 @@
 
 .addingProduct {
 	margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 50px;
 }
 .subTitle {
 	color: #3f4e65;
@@ -34,7 +37,7 @@
 	padding: 21px 20px;
 	border-radius: 36px;
 	border: none;
-	max-height: 324px;
+	min-height: 175px;
 	height: 100%;
 	width: 100%;
 	resize: none;
@@ -48,43 +51,11 @@
 	outline: none;
 }
 
-.selectWrapper {
-	position: relative;
-	margin-bottom: 15px;
-}
-.selectWrapper::after {
-	content: '';
-	position: absolute;
-	right: 30px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	width: 7px;
-	height: 7px;
-	background: url('../../assets/images/select-arrow.svg') no-repeat;
-}
-
-.select {
-	display: block;
-	background-color: #ededed;
-	padding: 21px 20px;
-	border-radius: 36px;
-	border: none;
-	height: 100%;
-	width: 100%;
-	margin-bottom: 15px;
-	cursor: pointer;
-	appearance: none;
-}
-.select:placeholder {
-	color: #5c6370;
-	font-size: 12px;
-}
-.select:focus {
-	box-shadow: inset 0 0 7px 3px #888;
-	outline: none;
-}
-
 .checkbox {
 	margin-right: 10px;
+}
+
+.fileInput {
+	display: block;
+	margin-bottom: 15px;
 }
