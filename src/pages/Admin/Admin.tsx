@@ -3,6 +3,10 @@ import styles from './Admin.module.css';
 import Input from '../../components/Input/Input';
 import cn from 'classnames';
 import Button from '../../components/Button/Button';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { fetchData, productsCardSelector } from '../../redux/slices/productsSlice';
+import { useEffect } from 'react';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Admin = () => {
 	const arrayTypes = [
@@ -19,11 +23,34 @@ const Admin = () => {
 		'Бумажная продукция',
 	];
 
+	const { data, loading } = useAppSelector(productsCardSelector);
+
+	const dispatch = useAppDispatch();
+
+	let param = [1, '', '', '', ''];
+
+	useEffect(() => {
+		dispatch(fetchData(param));
+	}, [dispatch]);
+
+	localStorage.setItem('data', JSON.stringify(data));
+
+	let localStorageTemp: any = localStorage.getItem('data');
+
+	let cardsLocalStorage = JSON.parse(localStorageTemp);
+
+	const productCards = cardsLocalStorage.map((item: any) => {
+		return <ProductCard {...item} key={item.barcode} />;
+	});
+
 	return (
 		<div className={styles.admin}>
 			<div className={styles.title}>Управление товарами</div>
 
+			<div className={styles.content}>{loading ? <div>Loading...</div> : productCards}</div>
+
 			<div className={styles.subTitle}>Добавление товара</div>
+
 			<form className={styles.addingProduct}>
 				<div className={styles.col}>
 					<div className={styles.group}>
@@ -86,7 +113,7 @@ const Admin = () => {
 
 						{arrayTypes.map((item) => {
 							return (
-								<div className={styles.checkboxesWrapper}>
+								<div className={styles.checkboxesWrapper} key={item}>
 									<input type="checkbox" className={styles.checkbox} />
 									<label htmlFor="inStock" className={styles.label}>
 										{item}

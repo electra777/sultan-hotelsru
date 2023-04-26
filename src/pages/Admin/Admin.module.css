@@ -59,3 +59,10 @@
 	display: block;
 	margin-bottom: 15px;
 }
+
+.content {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	align-items: baseline;
+	gap: 21px;
+}
