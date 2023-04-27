@@ -6,17 +6,18 @@
 	margin: 50px 0 20px;
 }
 
-.addingProduct {
-	margin-bottom: 50px;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 50px;
-}
 .subTitle {
 	color: #3f4e65;
 	font-size: 24px;
 	font-weight: 500;
 	margin-bottom: 25px;
+}
+
+.addingProduct {
+	margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 50px;
 }
 
 .group {

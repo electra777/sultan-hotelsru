@@ -47,8 +47,6 @@ const Admin = () => {
 		<div className={styles.admin}>
 			<div className={styles.title}>Управление товарами</div>
 
-			<div className={styles.content}>{loading ? <div>Loading...</div> : productCards}</div>
-
 			<div className={styles.subTitle}>Добавление товара</div>
 
 			<form className={styles.addingProduct}>
@@ -155,6 +153,8 @@ const Admin = () => {
 					<Button>Добавить товар</Button>
 				</div>
 			</form>
+
+			<div className={styles.content}>{loading ? <div>Loading...</div> : productCards}</div>
 		</div>
 	);
 };
