@@ -47,7 +47,7 @@ const Admin = () => {
 		<div className={styles.admin}>
 			<div className={styles.title}>Управление товарами</div>
 
-			<button className={styles.subTitle}>Добавление товара</button>
+			<button className={styles.btnAdding}>Добавление товара</button>
 
 			<form className={styles.addingProduct}>
 				<div className={styles.col}>

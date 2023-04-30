@@ -6,12 +6,22 @@
 	margin: 50px 0 20px;
 }
 
-.subTitle {
-	color: #3f4e65;
-	font-size: 24px;
-	font-weight: 500;
-	margin-bottom: 25px;
+.btnAdding {
+	background-color: #ffc85e;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 18px 51px;
+	border-radius: 79px;
+	position: relative;
+	display: block;
 	border: none;
+	margin-bottom: 25px;
+	transition: 0.5s;
+}
+.btnAdding:hover {
+	background-color: #ffaa00;
+	transition: 0.5s;
 }
 
 .addingProduct {
