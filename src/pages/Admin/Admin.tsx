@@ -5,7 +5,7 @@ import cn from 'classnames';
 import Button from '../../components/Button/Button';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { fetchData, productsCardSelector } from '../../redux/slices/productsSlice';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Admin = () => {
@@ -43,11 +43,21 @@ const Admin = () => {
 		return <ProductCard {...item} key={item.barcode} />;
 	});
 
+	const [isActiveAdding, setIsActiveAdding] = useState(false);
+
+	const setActiveAdding = () => {
+		setIsActiveAdding(!isActiveAdding);
+	};
+
 	return (
 		<div className={styles.admin}>
 			<div className={styles.title}>Управление товарами</div>
 
-			<button className={styles.btnAdding}>Добавление товара</button>
+			<button
+				className={cn(styles.btnAdding, { [styles.isActive]: isActiveAdding })}
+				onClick={setActiveAdding}>
+				Добавление товара
+			</button>
 
 			<form className={styles.addingProduct}>
 				<div className={styles.col}>
