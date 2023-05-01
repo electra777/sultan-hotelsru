@@ -24,6 +24,13 @@
 	transition: 0.5s;
 }
 
+.btnAdding.isActive {
+	background-color: #ffaa00;
+}
+.btnAdding.isActive:hover {
+	background-color: #ffc85e;
+}
+
 .addingProduct {
 	margin-bottom: 50px;
 	display: grid;
