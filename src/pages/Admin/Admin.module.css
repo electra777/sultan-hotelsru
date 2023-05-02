@@ -16,6 +16,7 @@
 	position: relative;
 	display: block;
 	border: none;
+	margin-left: auto;
 	margin-bottom: 25px;
 	transition: 0.5s;
 }
@@ -26,16 +27,20 @@
 
 .btnAdding.isActive {
 	background-color: #ffaa00;
-}
-.btnAdding.isActive:hover {
-	background-color: #ffc85e;
+	font-size: 0;
+	padding: 27px;
+	background: url('../../assets/images/cross.svg') no-repeat center center #ffecc5;
 }
 
 .addingProduct {
 	margin-bottom: 50px;
-	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 50px;
+	display: none;
+}
+
+.btnAdding.isActive + .addingProduct {
+	display: grid;
 }
 
 .group {
