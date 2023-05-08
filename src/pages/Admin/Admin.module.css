@@ -30,6 +30,7 @@
 	font-size: 0;
 	padding: 27px;
 	background: url('../../assets/images/cross.svg') no-repeat center center #ffecc5;
+	width: initial;
 }
 
 .addingProduct {
