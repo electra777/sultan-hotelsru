@@ -27,3 +27,23 @@
 	box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.5);
 	transition: 0.5s;
 }
+
+@media (max-width: 725px) {
+	.menu {
+		grid-template-columns: 1fr;
+	}
+
+	.title {
+		font-size: 22px;
+	}
+
+	.item {
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 465px) {
+	.index {
+		margin: 70px 0;
+	}
+}
